@@ -1,11 +1,22 @@
+//
+// Created by smelvinsky on 21.10.17.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stdint.h>
+#include <time.h>   //tmp
+#include <string.h>
+#include "random.h"
+#include "array_utils.h"
+
 
 int main(int argc, char *argv[])
 {
-    char* unreadable_program_argument_chars;
+    //tmp:
+    srand(time(NULL));
+
+    char *unreadable_program_argument_chars;
     int seq_length;
 
     if(argc != 2)
@@ -23,9 +34,9 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    //TODO :  function returning uint8_t array of specified lengths
     uint8_t random_seq[seq_length];
-    printf("given length of sequence: %i", seq_length);
+    generate_uint8_t_random_seq(seq_length, random_seq);
+    print_uint8_t_array(stdout, random_seq, seq_length);
 
     return EXIT_SUCCESS;
 }

@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/smelvinsky/Dev/Apps/RandomSequenceGenerator/src/main.c" "/home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/array_utils.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/array_utils.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/main.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/random.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

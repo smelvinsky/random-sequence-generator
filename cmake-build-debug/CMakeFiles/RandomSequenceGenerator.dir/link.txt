@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o  -o RandomSequenceGenerator 
+/usr/bin/cc -g   CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o CMakeFiles/RandomSequenceGenerator.dir/src/array_utils.c.o  -o RandomSequenceGenerator 

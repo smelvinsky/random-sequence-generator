@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o"
+  "CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o"
+  "CMakeFiles/RandomSequenceGenerator.dir/src/array_utils.c.o"
   "RandomSequenceGenerator.pdb"
   "RandomSequenceGenerator"
 )

@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator
+CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ RandomSequenceGenerator/fast:
 	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/build
 .PHONY : RandomSequenceGenerator/fast
 
+src/array_utils.o: src/array_utils.c.o
+
+.PHONY : src/array_utils.o
+
+# target to build an object file
+src/array_utils.c.o:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/array_utils.c.o
+.PHONY : src/array_utils.c.o
+
+src/array_utils.i: src/array_utils.c.i
+
+.PHONY : src/array_utils.i
+
+# target to preprocess a source file
+src/array_utils.c.i:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/array_utils.c.i
+.PHONY : src/array_utils.c.i
+
+src/array_utils.s: src/array_utils.c.s
+
+.PHONY : src/array_utils.s
+
+# target to generate assembly for a file
+src/array_utils.c.s:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/array_utils.c.s
+.PHONY : src/array_utils.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -150,6 +177,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/random.o: src/random.c.o
+
+.PHONY : src/random.o
+
+# target to build an object file
+src/random.c.o:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o
+.PHONY : src/random.c.o
+
+src/random.i: src/random.c.i
+
+.PHONY : src/random.i
+
+# target to preprocess a source file
+src/random.c.i:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.i
+.PHONY : src/random.c.i
+
+src/random.s: src/random.c.s
+
+.PHONY : src/random.s
+
+# target to generate assembly for a file
+src/random.c.s:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.s
+.PHONY : src/random.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RandomSequenceGenerator"
+	@echo "... src/array_utils.o"
+	@echo "... src/array_utils.i"
+	@echo "... src/array_utils.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/random.o"
+	@echo "... src/random.i"
+	@echo "... src/random.s"
 .PHONY : help
 
 
