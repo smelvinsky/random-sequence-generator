@@ -54,45 +54,45 @@ RM = /home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/Apps/RandomNumberGenerator
+CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/RandomNumberGenerator.dir
+# Target rules for target CMakeFiles/RandomSequenceGenerator.dir
 
 # All Build rule for target.
-CMakeFiles/RandomNumberGenerator.dir/all:
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/depend
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target RandomNumberGenerator"
-.PHONY : CMakeFiles/RandomNumberGenerator.dir/all
+CMakeFiles/RandomSequenceGenerator.dir/all:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/depend
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target RandomSequenceGenerator"
+.PHONY : CMakeFiles/RandomSequenceGenerator.dir/all
 
 # Include target in all.
-all: CMakeFiles/RandomNumberGenerator.dir/all
+all: CMakeFiles/RandomSequenceGenerator.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/RandomNumberGenerator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RandomNumberGenerator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/RandomNumberGenerator.dir/rule
+CMakeFiles/RandomSequenceGenerator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RandomSequenceGenerator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/RandomSequenceGenerator.dir/rule
 
 # Convenience name for target.
-RandomNumberGenerator: CMakeFiles/RandomNumberGenerator.dir/rule
+RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/rule
 
-.PHONY : RandomNumberGenerator
-
-# clean rule for target.
-CMakeFiles/RandomNumberGenerator.dir/clean:
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/clean
-.PHONY : CMakeFiles/RandomNumberGenerator.dir/clean
+.PHONY : RandomSequenceGenerator
 
 # clean rule for target.
-clean: CMakeFiles/RandomNumberGenerator.dir/clean
+CMakeFiles/RandomSequenceGenerator.dir/clean:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/clean
+.PHONY : CMakeFiles/RandomSequenceGenerator.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/RandomSequenceGenerator.dir/clean
 
 .PHONY : clean
 

@@ -48,24 +48,13 @@ RM = /home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/Apps/RandomNumberGenerator
+CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug/CMakeFiles /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomNumberGenerator/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RandomNumberGenerator
+# Target rules for targets named RandomSequenceGenerator
 
 # Build rule for target.
-RandomNumberGenerator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RandomNumberGenerator
-.PHONY : RandomNumberGenerator
+RandomSequenceGenerator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandomSequenceGenerator
+.PHONY : RandomSequenceGenerator
 
 # fast build rule for target.
-RandomNumberGenerator/fast:
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/build
-.PHONY : RandomNumberGenerator/fast
+RandomSequenceGenerator/fast:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/build
+.PHONY : RandomSequenceGenerator/fast
 
 src/main.o: src/main.c.o
 
@@ -129,7 +129,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/src/main.c.o
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -138,7 +138,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/src/main.c.i
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -147,7 +147,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) -f CMakeFiles/RandomNumberGenerator.dir/build.make CMakeFiles/RandomNumberGenerator.dir/src/main.c.s
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 # Help Target
@@ -156,9 +156,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... RandomNumberGenerator"
+	@echo "... edit_cache"
+	@echo "... RandomSequenceGenerator"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
