@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/smelvinsky/Dev/Apps/RandomNumberGenerator/src/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdint.h
+-
+
