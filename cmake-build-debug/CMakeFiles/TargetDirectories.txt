@@ -1,3 +1,0 @@
-/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir

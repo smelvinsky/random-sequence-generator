@@ -1,20 +1,20 @@
-//
-// Created by smelvinsky on 21.10.17.
-//
+/**
+ *  Created by smelvinsky on 21.10.17.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <time.h>   //tmp
-#include <string.h>
-#include "random.h"
-#include "array_utils.h"
+#include "utils/array_utils.h"
+#include "data_sources/soundcard/soundcard_noise.h"
+#include "utils/buffer_utils.h"
+#include "data_sources/generator.h"
+
+//TODO: make getopt() argument handling, some arguments hardcoded for now:
 
 
 int main(int argc, char *argv[])
 {
-    //tmp:
-    srand(time(NULL));
 
     char *unreadable_program_argument_chars;
     int seq_length;
@@ -34,9 +34,23 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    uint8_t random_seq[seq_length];
-    generate_uint8_t_random_seq(seq_length, random_seq);
-    print_uint8_t_array(stdout, random_seq, seq_length);
+    buffer buff_1;
+    gen_hw_init(&buff_1, NULL, NULL, NULL);
+
+
+    ////////////////////////////////////////
+    int i = 10;
+    while (i > 0)
+
+    {
+        i--;
+        gen_read_from_source1(&buff_1);
+        print_uint8_t_array(stdout, buff_1.buff, (int) buff_1.size);
+        printf("\n");
+    }
+    ///////////////////////////////////////
+
+    gen_hw_close(&buff_1, NULL, NULL, NULL);
 
     return EXIT_SUCCESS;
 }
