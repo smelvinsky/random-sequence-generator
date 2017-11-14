@@ -39,34 +39,25 @@ int main(int argc, char *argv[])
     gen_hw_init(&buff_1, &buff_2, NULL, NULL);
 
 
-    ////////////////////////////////////////
-    int i = 10;
-    while (i > 0)
+    int samples_read;
 
+    while(1)
     {
-        i--;
-        gen_read_from_source1(&buff_1);
-        print_uint8_t_array(stdout, buff_1.buff, (int) buff_1.size);
-        printf("\n");
+        samples_read = gen_read_from_source1(&buff_1);
+        printf("Samples read: %d\n", samples_read);
+        print_uint8_t_array(stdout, buff_1.buff, samples_read);
     }
-    ///////////////////////////////////////
 
-    ////////////////////////////////////////
-    int j = 10;
-    while (j > 0)
-
+    while(1)
     {
-        j--;
-        gen_read_from_source2(&buff_2);
-        printf("%s", (char *) buff_2.buff);
-        printf("\n");
-    }
-    ///////////////////////////////////////
-
-    while (gen_read_from_source1(&buff_1) > 0)
-    {
-        print_uint8_t_array(stdout, buff_1.buff, (int) buff_1.size);
-        printf("\n");
+        samples_read=gen_read_from_source2(&buff_2);
+        if (samples_read >= buff_2.size)
+        {
+            fprintf(stderr, "Buffer overflow might have occurred (%zu or more data received).\n"
+                    "Enlarge SERIAL_DEV_BUFF_SIZE or slow down incoming transmission speed.", buff_2.size);
+        }
+        //printf("\nREAD: %d\n", samples_read);
+        write(1, buff_2.buff, samples_read);
     }
 
     gen_hw_close(&buff_1, &buff_2, NULL, NULL);

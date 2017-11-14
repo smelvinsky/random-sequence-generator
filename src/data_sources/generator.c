@@ -55,7 +55,7 @@ void gen_hw_init(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
     /** source 2 - serial dev / Arduino - hardware initialization */
     serial_dev_name = "/dev/ttyACM0";
     serial_dev_access_mode = O_RDONLY;
-    serial_dev_exe_perm = O_NOCTTY | O_NONBLOCK;
+    serial_dev_exe_perm = O_NOCTTY;
     serial_dev_baud_rate = B9600;
 
     serial_dev_conf.serial_dev_name = serial_dev_name;

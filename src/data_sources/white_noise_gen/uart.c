@@ -103,6 +103,7 @@ size_t serial_dev_set_parameters(serial_dev *serial_dev, void **dst_buff)
     }
 
     *dst_buff = malloc(SERIAL_DEV_BUFF_SIZE);
+    memset(*dst_buff, 0, malloc_usable_size(*dst_buff));
 
     #ifdef SERIAL_DEBUG
     printf("\t==> Buffer allocated with size of %d\n", (int) malloc_usable_size(*dst_buff));
@@ -141,12 +142,12 @@ size_t serial_dev_set_parameters(serial_dev *serial_dev, void **dst_buff)
     t_options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
 
     //TODO: do przemyślenia jak to rozegrać i w jakim formacie będą przesyłane dane
-//    /* wait for 12 characters to come in before read returns    */
-//    /* WARNING! THIS CAUSES THE read() TO BLOCK UNTIL ALL       */
-//    /* CHARACTERS HAVE COME IN!                                 */
-//    t_options.c_cc[VMIN] = 12;
-//    /* no minimum time to wait before read returns */
-//    t_options.c_cc[VTIME] = 0;
+    /* wait for 12 characters to come in before read returns    */
+    /* WARNING! THIS CAUSES THE read() TO BLOCK UNTIL ALL       */
+    /* CHARACTERS HAVE COME IN!                                 */
+    t_options.c_cc[VMIN] = 8;
+    /* no minimum time to wait before read returns */
+    t_options.c_cc[VTIME] = 0;
 
     /* commit options */
     if (tcsetattr(serial_dev->serial_dev_fd, TCSANOW, &t_options) < 0)

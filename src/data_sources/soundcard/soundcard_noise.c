@@ -364,6 +364,8 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     printf("\t==> Buffer allocated with size of %d\n", (int) malloc_usable_size(*dst_buff));
     #endif
 
+    memset(*dst_buff, 0, malloc_usable_size(*dst_buff));
+
     /* Frees a previously allocated snd_pcm_hw_params_t */
     snd_pcm_hw_params_free (pcm_dev->pcm_dev_params);
 
