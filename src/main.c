@@ -15,7 +15,6 @@
 
 int main(int argc, char *argv[])
 {
-
     char *unreadable_program_argument_chars;
     int seq_length;
 
@@ -35,7 +34,9 @@ int main(int argc, char *argv[])
     }
 
     buffer buff_1;
-    gen_hw_init(&buff_1, NULL, NULL, NULL);
+    buffer buff_2;
+
+    gen_hw_init(&buff_1, &buff_2, NULL, NULL);
 
 
     ////////////////////////////////////////
@@ -50,7 +51,25 @@ int main(int argc, char *argv[])
     }
     ///////////////////////////////////////
 
-    gen_hw_close(&buff_1, NULL, NULL, NULL);
+    ////////////////////////////////////////
+    int j = 10;
+    while (j > 0)
+
+    {
+        j--;
+        gen_read_from_source2(&buff_2);
+        printf("%s", (char *) buff_2.buff);
+        printf("\n");
+    }
+    ///////////////////////////////////////
+
+    while (gen_read_from_source1(&buff_1) > 0)
+    {
+        print_uint8_t_array(stdout, buff_1.buff, (int) buff_1.size);
+        printf("\n");
+    }
+
+    gen_hw_close(&buff_1, &buff_2, NULL, NULL);
 
     return EXIT_SUCCESS;
 }

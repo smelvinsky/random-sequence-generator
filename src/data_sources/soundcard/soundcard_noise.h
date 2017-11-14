@@ -63,6 +63,7 @@ typedef struct pcm_dev_t
 
     /* CONFIGURABLE BY USER: */
 
+    /** PCM configuration structure */
     pcm_dev_config *pcm_dev_conf;
 
 } pcm_dev;

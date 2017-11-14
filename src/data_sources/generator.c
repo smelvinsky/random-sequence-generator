@@ -2,8 +2,11 @@
 // Created by smelvinsky on 30.10.17.
 //
 
+#include "termios.h"
+
 #include "generator.h"
 #include "soundcard/soundcard_noise.h"
+#include "white_noise_gen/uart.h"
 
 /** variables associated with source 1 - soundcard */
 static char *pcm_dev_name;
@@ -16,7 +19,14 @@ static unsigned int pcm_dev_num_of_channels;
 static pcm_dev_config pcm_dev_conf;
 static pcm_dev pcm_device;
 
-/** variables associated with source 2 - ... */
+/** variables associated with source 2 - serial dev / Arduino */
+static char *serial_dev_name;
+static int serial_dev_access_mode;
+static int serial_dev_exe_perm;
+static speed_t serial_dev_baud_rate;
+
+static serial_dev_config serial_dev_conf;
+static serial_dev serial_device;
 
 void gen_hw_init(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
 {
@@ -42,7 +52,21 @@ void gen_hw_init(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
     buff_1->size = pcm_dev_set_parameters(&pcm_device, &(buff_1->buff));
 
 
-    /** source 2 - ... - hardware innitialization */
+    /** source 2 - serial dev / Arduino - hardware initialization */
+    serial_dev_name = "/dev/ttyACM0";
+    serial_dev_access_mode = O_RDONLY;
+    serial_dev_exe_perm = O_NOCTTY | O_NONBLOCK;
+    serial_dev_baud_rate = B9600;
+
+    serial_dev_conf.serial_dev_name = serial_dev_name;
+    serial_dev_conf.serial_dev_access_mode = &serial_dev_access_mode;
+    serial_dev_conf.serial_dev_exe_perm = &serial_dev_exe_perm;
+    serial_dev_conf.serial_dev_baud_rate = &serial_dev_baud_rate;
+
+    serial_dev_init(&serial_device, &serial_dev_conf);
+    serial_dev_open(&serial_device);
+    buff_2->size = serial_dev_set_parameters(&serial_device, &(buff_2->buff));
+
 }
 
 void gen_hw_close(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
@@ -52,7 +76,8 @@ void gen_hw_close(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4
     pcm_dev_close(&pcm_device, &(buff_1->buff));
 
 
-    /** source 2 - ... - hardware deinitialization */
+    /** source 2 - serial dev / Arduino - hardware deinitialization */
+    serial_dev_close(&serial_device, &(buff_2->buff));
 }
 
 int gen_read_from_source1(buffer *buff_1)
@@ -60,3 +85,10 @@ int gen_read_from_source1(buffer *buff_1)
     int samples_read = (int) pcm_dev_read(&pcm_device, buff_1->buff);
     return samples_read;
 }
+
+int gen_read_from_source2(buffer *buff_2)
+{
+    int samples_read = (int) serial_dev_read(&serial_device, buff_2->buff);
+    return samples_read;
+}
+

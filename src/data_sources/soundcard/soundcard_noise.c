@@ -118,13 +118,13 @@ void pcm_dev_init(pcm_dev *pcm_dev, pcm_dev_config *pcm_dev_conf)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
         exit(EXIT_FAILURE);
     }
 
     if(!pcm_dev_conf)
     {
-        fprintf(stderr, "pcm_dev_config pointer cannot be NULL");
+        fprintf(stderr, "pcm_dev_config pointer cannot be NULL\n");
         exit(EXIT_FAILURE);
     }
 
@@ -145,7 +145,7 @@ void pcm_dev_open(pcm_dev *pcm_dev)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
         exit(EXIT_FAILURE);
     }
 
@@ -160,7 +160,7 @@ void pcm_dev_open(pcm_dev *pcm_dev)
 
     if ((err = snd_pcm_open(&pcm_dev->pcm_handle, pcm_dev->pcm_dev_conf->pcm_dev_name, *(pcm_dev->pcm_dev_conf->pcm_dev_stream), *(pcm_dev->pcm_dev_conf->pcm_dev_mode))) < 0)
     {
-        fprintf(stderr, "Cannot open audio device %s (%s)\nPlease check if your device is properly detected or if is being used by other software.\n"
+        fprintf(stderr, "Cannot open audio device \"%s\" (%s)\nPlease check if your device is properly detected or if is being used by other software.\n"
                 "Useful commands: \"arecord -L\" / \"arecord -l\" or \"aplay -L\" / \"aplay -l\"", pcm_dev->pcm_dev_conf->pcm_dev_name, snd_strerror(err));
         exit(EXIT_FAILURE);
     }
@@ -185,7 +185,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
         exit(EXIT_FAILURE);
     }
 
@@ -445,7 +445,7 @@ void pcm_dev_drain(pcm_dev *pcm_dev)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
         exit(EXIT_FAILURE);
     }
 
@@ -482,7 +482,7 @@ void pcm_dev_close(pcm_dev *pcm_dev, void **buff)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
         exit(EXIT_FAILURE);
     }
 
