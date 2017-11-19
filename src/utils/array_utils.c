@@ -11,6 +11,7 @@ void print_uint8_t_array(FILE *stream, const uint8_t *array, int array_length)
     {
         fprintf(stream, "%d ", *(array + i));
     }
+    fprintf(stream, "\n");
 }
 
 void print_uint16_t_array(FILE *stream, const uint16_t *array, int array_length)
@@ -19,6 +20,7 @@ void print_uint16_t_array(FILE *stream, const uint16_t *array, int array_length)
     {
         fprintf(stream, "%d ", *(array + i));
     }
+    fprintf(stream, "\n");
 }
 
 void print_uint32_t_array(FILE *stream, const uint32_t *array, int array_length)
@@ -27,6 +29,7 @@ void print_uint32_t_array(FILE *stream, const uint32_t *array, int array_length)
     {
         fprintf(stream, "%d ", *(array + i));
     }
+    fprintf(stream, "\n");
 }
 
 void print_uint64_t_array(FILE *stream, const uint64_t *array, int array_length)
@@ -35,4 +38,5 @@ void print_uint64_t_array(FILE *stream, const uint64_t *array, int array_length)
     {
         fprintf(stream, "%ld ", *(array + i));
     }
+    fprintf(stream, "\n");
 }

@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/generator.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/white_noise_gen/uart.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/main.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/random.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/array_utils.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/buffer_utils.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o"
-  "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/save_to_file.c" "/home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/generator.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/uart.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/main.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/random.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/array_utils.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o"
+  "/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/save_to_file.c" "/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

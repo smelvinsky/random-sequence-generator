@@ -1,4 +1,4 @@
-/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/smelvinsky/Dev/Apps/randomSequenceGenerator
+/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/smelvinsky/Dev/RandomSequenceGenerator
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug
+-- Build files have been written to: /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug
