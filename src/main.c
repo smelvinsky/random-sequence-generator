@@ -8,6 +8,7 @@
 #include <memory.h>
 #include <errno.h>
 #include <pthread.h>
+#include <unistd.h>
 #include "utils/buffer_utils.h"
 #include "data_sources/generator.h"
 #include "utils/save_to_file.h"
@@ -55,7 +56,7 @@ void *soundcard_thread(void *arg)
         printf("Reading from soundcard thread...\n");
         #endif //THREAD_DEBUG
 
-        samples_read = gen_read_from_source1(thread_arg_struct1->buff_src->buff);
+        samples_read = gen_read_from_source1(thread_arg_struct1->buff_src);
 
         #ifdef RW_DEBUG
         printf("%d bytes read from soundcard\n", samples_read);
@@ -70,6 +71,7 @@ void *soundcard_thread(void *arg)
             fwrite(thread_arg_struct1->buff_src->buff, 1, (size_t) samples_read, thread_arg_struct1->fd);
             #endif //SAVE_TO_FILE
             #ifdef STD_OUTPUT
+            //write(1, thread_arg_struct1->buff_src->buff, (size_t) samples_read);
             print_uint8_t_array(stdout, thread_arg_struct1->buff_src->buff, samples_read);
             #endif //STD_OUTPUT
             *(thread_arg_struct1->bytes_written) = *(thread_arg_struct1->bytes_written) + samples_read;
@@ -80,6 +82,7 @@ void *soundcard_thread(void *arg)
             #endif //SAVE_TO_FILE
             #ifdef STD_OUTPUT
             print_uint8_t_array(stdout, thread_arg_struct1->buff_src->buff, *(thread_arg_struct1->seq_length) - (int) *(thread_arg_struct1->bytes_written));
+            //write(1, thread_arg_struct1->buff_src->buff, *(thread_arg_struct1->seq_length) - *(thread_arg_struct1->bytes_written));
             #endif //STD_OUTPUT
             *(thread_arg_struct1->bytes_written) = *(thread_arg_struct1->bytes_written) + (*(thread_arg_struct1->seq_length) - *(thread_arg_struct1->bytes_written));
         }
@@ -102,7 +105,7 @@ void *uart_thread(void *arg)
         printf("Reading from uart/arduino thread...\n");
         #endif
 
-        samples_read = gen_read_from_source2(thread_arg_struct2->buff_src->buff);
+        samples_read = gen_read_from_source2(thread_arg_struct2->buff_src);
         if (samples_read >= thread_arg_struct2->buff_src->size)
         {
             fprintf(stderr, "Buffer overflow might have occurred (%zu or more data received).\n"
@@ -122,7 +125,7 @@ void *uart_thread(void *arg)
             fwrite(thread_arg_struct2->buff_src->buff, 1, (size_t) samples_read, thread_arg_struct2->fd);
             #endif //SAVE_TO_FILE
             #ifdef STD_OUTPUT
-            print_uint8_t_array(stdout, thread_arg_struct2->buff_src->buff, samples_read);
+            write(1, thread_arg_struct2->buff_src->buff, (size_t) samples_read);
             #endif //STD_OUTPUT
             *(thread_arg_struct2->bytes_written) = *(thread_arg_struct2->bytes_written) + samples_read;
         } else
@@ -131,7 +134,7 @@ void *uart_thread(void *arg)
             fwrite(thread_arg_struct2->buff_src->buff, 1, *(thread_arg_struct2->seq_length) - *(thread_arg_struct2->bytes_written), thread_arg_struct2->fd);
             #endif //SAVE_TO_FILE
             #ifdef STD_OUTPUT
-            print_uint8_t_array(stdout, thread_arg_struct2->buff_src->buff, *(thread_arg_struct2->seq_length) - (int) *(thread_arg_struct2->bytes_written));
+            write(1, thread_arg_struct2->buff_src->buff, *(thread_arg_struct2->seq_length) - *(thread_arg_struct2->bytes_written));
             #endif //STD_OUTPUT
             *(thread_arg_struct2->bytes_written) = *(thread_arg_struct2->bytes_written) + (*(thread_arg_struct2->seq_length) - *(thread_arg_struct2->bytes_written));
         }
@@ -196,18 +199,18 @@ int main(int argc, char *argv[])
     buffer buff_src_1;
     gen_hw_init(&buff_src_1, &buff_src_2);
 
-//    pthread_t tid1; //thread ID for soundcard thread
-//    pthread_t tid2; //thread ID for uart/arduino thread
-//
-//    thread_arg_struct_t thread_arg_struct1 = {.buff_src = &buff_src_1, .fd = fd, .seq_length = &seq_length, .bytes_written = &bytes_written};
-//    thread_arg_struct_t thread_arg_struct2 = {.buff_src = &buff_src_2, .fd = fd, .seq_length = &seq_length, .bytes_written = &bytes_written};
-//
-//    pthread_create(&tid1, NULL, soundcard_thread, &thread_arg_struct1);
-//    pthread_create(&tid2 ,NULL, uart_thread, &thread_arg_struct2);
-//
-//    /* Wait until all the threads are done */
-//    pthread_join(tid1 ,NULL);
-//    pthread_join(tid2, NULL);
+    pthread_t tid1; //thread ID for soundcard thread
+    pthread_t tid2; //thread ID for uart/arduino thread
+
+    thread_arg_struct_t thread_arg_struct1 = {.buff_src = &buff_src_1, .fd = fd, .seq_length = &seq_length, .bytes_written = &bytes_written};
+    thread_arg_struct_t thread_arg_struct2 = {.buff_src = &buff_src_2, .fd = fd, .seq_length = &seq_length, .bytes_written = &bytes_written};
+
+    pthread_create(&tid1, NULL, soundcard_thread, &thread_arg_struct1);
+    pthread_create(&tid2 ,NULL, uart_thread, &thread_arg_struct2);
+
+    /* Wait until all the threads are done */
+    pthread_join(tid1 ,NULL);
+    pthread_join(tid2, NULL);
 
 
     gen_hw_close(&buff_src_1, &buff_src_2);

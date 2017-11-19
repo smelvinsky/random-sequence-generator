@@ -65,6 +65,8 @@ errno.h
 -
 pthread.h
 -
+unistd.h
+-
 utils/buffer_utils.h
 /home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.h
 data_sources/generator.h
