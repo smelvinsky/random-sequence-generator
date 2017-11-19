@@ -1,2 +1,2 @@
 Options: 
-CMake: 3.8.2@/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake
+CMake: 3.8.2@/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake

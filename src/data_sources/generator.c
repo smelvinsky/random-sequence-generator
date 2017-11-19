@@ -28,7 +28,7 @@ static speed_t serial_dev_baud_rate;
 static serial_dev_config serial_dev_conf;
 static serial_dev serial_device;
 
-void gen_hw_init(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
+void gen_hw_init(buffer *buff_1, buffer *buff_2)
 {
     /** source 1 - soundcard - hardware initialization */
     pcm_dev_name = "default";
@@ -69,15 +69,15 @@ void gen_hw_init(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
 
 }
 
-void gen_hw_close(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4)
+void gen_hw_close(buffer *buff_1, buffer *buff_2)
 {
+    /* "Deallocate memory in reversed order that you've allocated it" */
+    /** source 2 - serial dev / Arduino - hardware deinitialization */
+    serial_dev_close(&serial_device, &(buff_2->buff));
+
     /** source 1 - soundcard - hardware deinitialization */
     pcm_dev_drain(&pcm_device);
     pcm_dev_close(&pcm_device, &(buff_1->buff));
-
-
-    /** source 2 - serial dev / Arduino - hardware deinitialization */
-    serial_dev_close(&serial_device, &(buff_2->buff));
 }
 
 int gen_read_from_source1(buffer *buff_1)

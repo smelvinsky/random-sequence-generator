@@ -6,31 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/generator.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/generator.c
 termios.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/termios.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/termios.h
 generator.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/generator.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/generator.h
 soundcard/soundcard_noise.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
 white_noise_gen/uart.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/uart.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/white_noise_gen/uart.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/generator.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/generator.h
 ../utils/buffer_utils.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/buffer_utils.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.c
 malloc.h
 -
 soundcard_noise.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
 alsa/asoundlib.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/alsa/asoundlib.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/soundcard/alsa/asoundlib.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/uart.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/white_noise_gen/uart.c
 stdio.h
 -
 stdlib.h
@@ -46,55 +46,77 @@ errno.h
 malloc.h
 -
 termios.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/termios.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/white_noise_gen/termios.h
 uart.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/uart.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/white_noise_gen/uart.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/uart.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/white_noise_gen/uart.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/main.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/main.c
 stdio.h
 -
 stdlib.h
 -
 stdint.h
 -
+unistd.h
+-
+memory.h
+-
+errno.h
+-
+pthread.h
+-
 utils/array_utils.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/array_utils.h
-data_sources/soundcard/soundcard_noise.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/array_utils.h
 utils/buffer_utils.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/buffer_utils.h
 data_sources/generator.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/generator.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/data_sources/generator.h
+utils/save_to_file.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/save_to_file.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/random.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/random.c
 stdlib.h
 -
 random.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/random.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/random.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/random.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/random.h
 stdint.h
 -
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/array_utils.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/array_utils.c
 stdio.h
 -
 array_utils.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/array_utils.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/array_utils.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/array_utils.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/array_utils.h
 bits/types/FILE.h
 -
 stdint.h
 -
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.c
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/buffer_utils.c
 buffer_utils.h
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/buffer_utils.h
 
-/home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/buffer_utils.h
 stddef.h
 -
+
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/save_to_file.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+memory.h
+-
+save_to_file.h
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/save_to_file.h
+
+/home/smelvinsky/Dev/Apps/randomSequenceGenerator/src/utils/save_to_file.h
 

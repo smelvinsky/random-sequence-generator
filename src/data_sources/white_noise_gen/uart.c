@@ -71,7 +71,10 @@ void serial_dev_open(serial_dev *serial_dev)
     if (serial_dev->serial_dev_fd == -1)
     {
         fprintf(stderr, "Cannot open \"%s\" device (%s)\nPlease check if your device is properly detected or if is being used by other software.\n"
-                "Useful commands: \"dmesg | grep tty\"", serial_dev->serial_dev_conf->serial_dev_name, strerror(errno));
+                "\"Useful commands: \"dmesg | grep tty\"\n(\"Permission denied\" might indicate that r/w permit of the device have not been given for your user:\n"
+                "To fix it, enter the commands as root:\n"
+                "$ sudo usermod -a -G dialout <username>\n"
+                "$ sudo chmod a+rw /dev/ttyACM0)\n", serial_dev->serial_dev_conf->serial_dev_name, strerror(errno));
         fflush(stderr);
         exit(EXIT_FAILURE);
     }

@@ -33,6 +33,6 @@ void print_uint64_t_array(FILE *stream, const uint64_t *array, int array_length)
 {
     for (int i = 0; i < array_length; i++)
     {
-        fprintf(stream, "%d ", *(array + i));
+        fprintf(stream, "%ld ", *(array + i));
     }
 }

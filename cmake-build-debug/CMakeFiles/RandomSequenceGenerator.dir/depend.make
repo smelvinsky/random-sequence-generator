@@ -14,10 +14,10 @@ CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o: ../src/data_sources/white_noise_gen/uart.h
 
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/data_sources/generator.h
-CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/data_sources/soundcard/soundcard_noise.h
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/main.c
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/utils/array_utils.h
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/utils/buffer_utils.h
+CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/utils/save_to_file.h
 
 CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o: ../src/random.c
 CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o: ../src/random.h
@@ -27,4 +27,7 @@ CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o: ../src/utils/a
 
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o: ../src/utils/buffer_utils.c
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o: ../src/utils/buffer_utils.h
+
+CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o: ../src/utils/save_to_file.c
+CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o: ../src/utils/save_to_file.h
 

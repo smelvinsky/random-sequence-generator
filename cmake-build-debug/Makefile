@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator
+CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/Apps/randomSequenceGenerator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debu
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/smelvinsky/Dev/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles /home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/Apps/randomSequenceGenerator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -312,6 +312,33 @@ src/utils/buffer_utils.c.s:
 	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.s
 .PHONY : src/utils/buffer_utils.c.s
 
+src/utils/save_to_file.o: src/utils/save_to_file.c.o
+
+.PHONY : src/utils/save_to_file.o
+
+# target to build an object file
+src/utils/save_to_file.c.o:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o
+.PHONY : src/utils/save_to_file.c.o
+
+src/utils/save_to_file.i: src/utils/save_to_file.c.i
+
+.PHONY : src/utils/save_to_file.i
+
+# target to preprocess a source file
+src/utils/save_to_file.c.i:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.i
+.PHONY : src/utils/save_to_file.c.i
+
+src/utils/save_to_file.s: src/utils/save_to_file.c.s
+
+.PHONY : src/utils/save_to_file.s
+
+# target to generate assembly for a file
+src/utils/save_to_file.c.s:
+	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.s
+.PHONY : src/utils/save_to_file.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -342,6 +369,9 @@ help:
 	@echo "... src/utils/buffer_utils.o"
 	@echo "... src/utils/buffer_utils.i"
 	@echo "... src/utils/buffer_utils.s"
+	@echo "... src/utils/save_to_file.o"
+	@echo "... src/utils/save_to_file.i"
+	@echo "... src/utils/save_to_file.s"
 .PHONY : help
 
 

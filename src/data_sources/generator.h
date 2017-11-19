@@ -8,10 +8,10 @@
 #include "../utils/buffer_utils.h"
 
 /** initializes hardware of all generator sources */
-void gen_hw_init(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4);
+void gen_hw_init(buffer *buff_1, buffer *buff_2);
 
 /** deinitializes hardware of all generator sources */
-void gen_hw_close(buffer *buff_1, buffer *buff_2, buffer *buff_3, buffer *buff_4);
+void gen_hw_close(buffer *buff_1, buffer *buff_2);
 
 /** reads from source 1 */
 int gen_read_from_source1(buffer *buff_1);
