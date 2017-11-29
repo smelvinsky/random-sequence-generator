@@ -16,10 +16,8 @@ void setup()
 void loop()
 {
   val = analogRead(A2);
-  Serial.print(val);
-  Serial.write(" ");
+  Serial.write(val);
   val = analogRead(A3);
-  Serial.print(val);
-  Serial.write("\n");
+  Serial.write(val);
 }
 

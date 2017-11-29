@@ -17,13 +17,13 @@
 #define MAX_BUFFER_LENGTH 1048576
 
 /* Uncomment for thread access debug */
-//#define THREAD_DEBUG
+#define THREAD_DEBUG
 
 /* Uncomment to save the output to file */
 #define SAVE_TO_FILE
 
 /* Uncomment for stdout output */
-//#define STD_OUTPUT
+#define STD_OUTPUT
 
 /* Uncomment for R/W debug */
 //#define RW_DEBUG
@@ -284,7 +284,7 @@ int main(int argc, char **argv)
     #ifdef RUNTIME_DEBUG
     clock_gettime(CLOCK_MONOTONIC, &end);
     elapsed = (end.tv_sec - begin.tv_sec) + ((end.tv_nsec - begin.tv_nsec) / 1000000000.0);
-    printf("Program runtime: %f ms\n", elapsed);
+    printf("Program runtime: %f s\n", elapsed);
     #endif //RUNTIME_DEBUG
 
     return EXIT_SUCCESS;
