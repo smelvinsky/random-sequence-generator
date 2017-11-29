@@ -5,9 +5,6 @@
 #include <malloc.h>
 #include "soundcard_noise.h"
 
-//TODO:fix error messages in entire file
-//TODO:make wrapper or structure for passing parameters to all these functions from outside
-
 /** Uncomment for a debug */
 #define PCM_DEBUG
 #define PCM_DEBUG_DESC
@@ -118,13 +115,13 @@ void pcm_dev_init(pcm_dev *pcm_dev, pcm_dev_config *pcm_dev_conf)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL (in \"pcm_dev_init\" function, soundcard_noise.c)\n");
         exit(EXIT_FAILURE);
     }
 
     if(!pcm_dev_conf)
     {
-        fprintf(stderr, "pcm_dev_config pointer cannot be NULL\n");
+        fprintf(stderr, "pcm_dev_config pointer cannot be NULL (in \"pcm_dev_init\" function, soundcard_noise.c)\n");
         exit(EXIT_FAILURE);
     }
 
@@ -145,7 +142,7 @@ void pcm_dev_open(pcm_dev *pcm_dev)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL (in \"pcm_dev_open\" function, soundcard_noise.c)\n");
         exit(EXIT_FAILURE);
     }
 
@@ -183,16 +180,22 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     int err;
     size_t buff_size;
 
+    if (!dst_buff)
+    {
+        fprintf(stderr, "(*dst_buff) pointer cannot be NULL (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n");
+        exit(EXIT_FAILURE);
+    }
+
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n");
         exit(EXIT_FAILURE);
     }
 
     /* Allocate the snd_pcm_hw_params_t structure of pcm_dev on the stack. */
     if ((err = snd_pcm_hw_params_malloc(&pcm_dev->pcm_dev_params)) < 0)
     {
-        fprintf (stderr, "cannot allocate hardware parameter structure (%s)\n", snd_strerror(err));
+        fprintf (stderr, "cannot allocate hardware parameter structure (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -203,7 +206,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     /* Init pcm_dev params with full configuration space */
     if ((err = snd_pcm_hw_params_any(pcm_dev->pcm_handle, pcm_dev->pcm_dev_params)) < 0)
     {
-        fprintf(stderr, "cannot initialize hardware parameter structure (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot initialize hardware parameter structure (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -222,7 +225,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     /* the sample data for the second channel and so on.                                                             */
     if ((err = snd_pcm_hw_params_set_access(pcm_dev->pcm_handle, pcm_dev->pcm_dev_params, *(pcm_dev->pcm_dev_conf->pcm_dev_access_type))) < 0)
     {
-        fprintf(stderr, "cannot set access type (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot set access type (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -235,7 +238,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     /* SND_PCM_FORMAT_U8     - 8-bit, unsigned      */
     if ((err = snd_pcm_hw_params_set_format(pcm_dev->pcm_handle, pcm_dev->pcm_dev_params, *(pcm_dev->pcm_dev_conf->pcm_dev_sample_format))) < 0)
     {
-        fprintf(stderr, "cannot set sample format (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot set sample format (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -249,7 +252,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     {
         if ((err = snd_pcm_hw_params_set_rate_near(pcm_dev->pcm_handle, pcm_dev->pcm_dev_params, &supported_sample_rate, 0)) < 0)
         {
-            fprintf(stderr, "cannot set sample rate (%s)\n", snd_strerror(err));
+            fprintf(stderr, "cannot set sample rate (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
             exit(EXIT_FAILURE);
         }
 
@@ -266,7 +269,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     /* Set number of channels */
     if ((err = snd_pcm_hw_params_set_channels(pcm_dev->pcm_handle, pcm_dev->pcm_dev_params, *(pcm_dev->pcm_dev_conf->pcm_dev_num_of_channels))) < 0)
     {
-        fprintf(stderr, "cannot set channel count (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot set channel count (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -298,7 +301,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     /* Check what buffer size have been given and passes to pcm_dev_conf structure*/
     if ((err = snd_pcm_hw_params_get_buffer_size(pcm_dev->pcm_dev_params, (snd_pcm_uframes_t *) &pcm_dev_buff_size)) < 0)
     {
-        fprintf(stderr, "cannot get buffer size from configuration space (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot get buffer size from configuration space (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -314,7 +317,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
 
     if ((err = snd_pcm_hw_params_get_period_time(pcm_dev->pcm_dev_params, &pcm_dev_period_time, NULL)) < 0)
     {
-        fprintf(stderr, "cannot get period time from configuration space (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot get period time from configuration space (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -328,7 +331,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
 
     if ((err = snd_pcm_hw_params_get_period_size(pcm_dev->pcm_dev_params, &pcm_dev_period_size, NULL)) < 0)
     {
-        fprintf(stderr, "cannot get period size from configuration space (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot get period size from configuration space (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -342,7 +345,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
 
     if ((err = snd_pcm_hw_params_get_buffer_time(pcm_dev->pcm_dev_params, &pcm_dev_buff_time, NULL)) < 0)
     {
-        fprintf(stderr, "cannot get buffer time from configuration space (%s)\n", snd_strerror(err));
+        fprintf(stderr, "cannot get buffer time from configuration space (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -376,7 +379,7 @@ size_t pcm_dev_set_parameters(pcm_dev *pcm_dev, void **dst_buff)
     /* Prepares PCM for use */
     if ((err = snd_pcm_prepare(pcm_dev->pcm_handle)) < 0)
     {
-        fprintf (stderr, "cannot prepare audio interface for use (%s)\n", snd_strerror(err));
+        fprintf (stderr, "cannot prepare audio interface for use (%s) (in \"pcm_dev_set_parameters\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -397,7 +400,7 @@ snd_pcm_sframes_t pcm_dev_read(pcm_dev *pcm_dev, void *dst_buff)
     printf("==> Reading from PCM device...\n");
     #endif
 
-    snd_pcm_sframes_t frames_read;
+    snd_pcm_sframes_t frames_read = 0;
 
     /* Read num_frames frames from the PCM device  */
     /* pointed to by pcm_handle to buffer capdata. */
@@ -447,7 +450,7 @@ void pcm_dev_drain(pcm_dev *pcm_dev)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL (in \"pcm_dev_drain\" function, soundcard_noise.c)\n");
         exit(EXIT_FAILURE);
     }
 
@@ -456,7 +459,7 @@ void pcm_dev_drain(pcm_dev *pcm_dev)
 
     if ((err = snd_pcm_drain(pcm_dev->pcm_handle)) < 0)
     {
-        fprintf (stderr, "cannot drain audio interface (%s)\n", snd_strerror(err));
+        fprintf (stderr, "cannot drain audio interface (%s) (in \"pcm_dev_drain\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 
@@ -484,14 +487,14 @@ void pcm_dev_close(pcm_dev *pcm_dev, void **buff)
 
     if (!pcm_dev)
     {
-        fprintf(stderr, "pcm_dev pointer cannot be NULL\n");
+        fprintf(stderr, "pcm_dev pointer cannot be NULL (in \"pcm_dev_close\" function, soundcard_noise.c)\n");
         exit(EXIT_FAILURE);
     }
 
     /* Closes PCM handle */
     if ((err = snd_pcm_close(pcm_dev->pcm_handle)) < 0)
     {
-        fprintf (stderr, "cannot close audio interface (%s)\n", snd_strerror(err));
+        fprintf (stderr, "cannot close audio interface (%s) (in \"pcm_dev_close\" function, soundcard_noise.c)\n", snd_strerror(err));
         exit(EXIT_FAILURE);
     }
 

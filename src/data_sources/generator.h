@@ -1,6 +1,6 @@
-//
-// Created by smelvinsky on 30.10.17.
-//
+/**
+ *  Created by smelvinsky on 30.10.17.
+ */
 
 #ifndef GENERATOR_H
 #define GENERATOR_H

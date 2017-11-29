@@ -1,6 +1,6 @@
-//
-// Created by smelvinsky on 13.11.17.
-//
+/**
+ * Created by smelvinsky on 13.11.17.
+ */
 
 #ifndef UART_H
 #define UART_H

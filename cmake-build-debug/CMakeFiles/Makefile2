@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator
 CMAKE_BINARY_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/RandomSequenceGenerator.dir
+# Target rules for target CMakeFiles/rand-seq-gen.dir
 
 # All Build rule for target.
-CMakeFiles/RandomSequenceGenerator.dir/all:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/depend
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target RandomSequenceGenerator"
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/all
+CMakeFiles/rand-seq-gen.dir/all:
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/depend
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target rand-seq-gen"
+.PHONY : CMakeFiles/rand-seq-gen.dir/all
 
 # Include target in all.
-all: CMakeFiles/RandomSequenceGenerator.dir/all
+all: CMakeFiles/rand-seq-gen.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/RandomSequenceGenerator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RandomSequenceGenerator.dir/all
+CMakeFiles/rand-seq-gen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rand-seq-gen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/rule
+.PHONY : CMakeFiles/rand-seq-gen.dir/rule
 
 # Convenience name for target.
-RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/rule
+rand-seq-gen: CMakeFiles/rand-seq-gen.dir/rule
 
-.PHONY : RandomSequenceGenerator
-
-# clean rule for target.
-CMakeFiles/RandomSequenceGenerator.dir/clean:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/clean
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/clean
+.PHONY : rand-seq-gen
 
 # clean rule for target.
-clean: CMakeFiles/RandomSequenceGenerator.dir/clean
+CMakeFiles/rand-seq-gen.dir/clean:
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/clean
+.PHONY : CMakeFiles/rand-seq-gen.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/rand-seq-gen.dir/clean
 
 .PHONY : clean
 

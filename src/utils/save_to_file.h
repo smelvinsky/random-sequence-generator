@@ -1,14 +1,13 @@
 /**
- * Created by smelvinsky on 18.11.17.
+ *  Created by smelvinsky on 18.11.17.
  */
 
 #ifndef SAVE_TO_FILE_H
 #define SAVE_TO_FILE_H
 
 FILE *create_and_open_file(char *filename);
-void write_to_file(const void *data_ptr, FILE *stream);
 void close_file(FILE *stream);
 
-char *generate_file_name(void);
+void generate_file_name(char **file_name);
 
 #endif //SAVE_TO_FILE_H

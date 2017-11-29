@@ -44,5 +44,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/RandomSequenceGenerator.dir/DependInfo.cmake"
+  "CMakeFiles/rand-seq-gen.dir/DependInfo.cmake"
   )

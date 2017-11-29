@@ -1,6 +1,6 @@
-//
-// Created by smelvinsky on 30.10.17.
-//
+/**
+ *  Created by smelvinsky on 30.10.17.
+ */
 
 #ifndef BUFFER_UTILS_H
 #define BUFFER_UTILS_H

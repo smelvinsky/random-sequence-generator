@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/smelvinsky/Programy/CLion-2017.2.2/clion-2017.2.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RandomSequenceGenerator
+# Target rules for targets named rand-seq-gen
 
 # Build rule for target.
-RandomSequenceGenerator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RandomSequenceGenerator
-.PHONY : RandomSequenceGenerator
+rand-seq-gen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rand-seq-gen
+.PHONY : rand-seq-gen
 
 # fast build rule for target.
-RandomSequenceGenerator/fast:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/build
-.PHONY : RandomSequenceGenerator/fast
+rand-seq-gen/fast:
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/build
+.PHONY : rand-seq-gen/fast
 
 src/data_sources/generator.o: src/data_sources/generator.c.o
 
@@ -129,7 +129,7 @@ src/data_sources/generator.o: src/data_sources/generator.c.o
 
 # target to build an object file
 src/data_sources/generator.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/generator.c.o
 .PHONY : src/data_sources/generator.c.o
 
 src/data_sources/generator.i: src/data_sources/generator.c.i
@@ -138,7 +138,7 @@ src/data_sources/generator.i: src/data_sources/generator.c.i
 
 # target to preprocess a source file
 src/data_sources/generator.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.i
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/generator.c.i
 .PHONY : src/data_sources/generator.c.i
 
 src/data_sources/generator.s: src/data_sources/generator.c.s
@@ -147,7 +147,7 @@ src/data_sources/generator.s: src/data_sources/generator.c.s
 
 # target to generate assembly for a file
 src/data_sources/generator.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.s
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/generator.c.s
 .PHONY : src/data_sources/generator.c.s
 
 src/data_sources/soundcard/soundcard_noise.o: src/data_sources/soundcard/soundcard_noise.c.o
@@ -156,7 +156,7 @@ src/data_sources/soundcard/soundcard_noise.o: src/data_sources/soundcard/soundca
 
 # target to build an object file
 src/data_sources/soundcard/soundcard_noise.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/soundcard/soundcard_noise.c.o
 .PHONY : src/data_sources/soundcard/soundcard_noise.c.o
 
 src/data_sources/soundcard/soundcard_noise.i: src/data_sources/soundcard/soundcard_noise.c.i
@@ -165,7 +165,7 @@ src/data_sources/soundcard/soundcard_noise.i: src/data_sources/soundcard/soundca
 
 # target to preprocess a source file
 src/data_sources/soundcard/soundcard_noise.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.i
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/soundcard/soundcard_noise.c.i
 .PHONY : src/data_sources/soundcard/soundcard_noise.c.i
 
 src/data_sources/soundcard/soundcard_noise.s: src/data_sources/soundcard/soundcard_noise.c.s
@@ -174,7 +174,7 @@ src/data_sources/soundcard/soundcard_noise.s: src/data_sources/soundcard/soundca
 
 # target to generate assembly for a file
 src/data_sources/soundcard/soundcard_noise.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.s
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/soundcard/soundcard_noise.c.s
 .PHONY : src/data_sources/soundcard/soundcard_noise.c.s
 
 src/data_sources/white_noise_gen/uart.o: src/data_sources/white_noise_gen/uart.c.o
@@ -183,7 +183,7 @@ src/data_sources/white_noise_gen/uart.o: src/data_sources/white_noise_gen/uart.c
 
 # target to build an object file
 src/data_sources/white_noise_gen/uart.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/white_noise_gen/uart.c.o
 .PHONY : src/data_sources/white_noise_gen/uart.c.o
 
 src/data_sources/white_noise_gen/uart.i: src/data_sources/white_noise_gen/uart.c.i
@@ -192,7 +192,7 @@ src/data_sources/white_noise_gen/uart.i: src/data_sources/white_noise_gen/uart.c
 
 # target to preprocess a source file
 src/data_sources/white_noise_gen/uart.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.i
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/white_noise_gen/uart.c.i
 .PHONY : src/data_sources/white_noise_gen/uart.c.i
 
 src/data_sources/white_noise_gen/uart.s: src/data_sources/white_noise_gen/uart.c.s
@@ -201,7 +201,7 @@ src/data_sources/white_noise_gen/uart.s: src/data_sources/white_noise_gen/uart.c
 
 # target to generate assembly for a file
 src/data_sources/white_noise_gen/uart.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.s
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/data_sources/white_noise_gen/uart.c.s
 .PHONY : src/data_sources/white_noise_gen/uart.c.s
 
 src/main.o: src/main.c.o
@@ -210,7 +210,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -219,7 +219,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.i
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -228,35 +228,8 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/main.c.s
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/main.c.s
 .PHONY : src/main.c.s
-
-src/random.o: src/random.c.o
-
-.PHONY : src/random.o
-
-# target to build an object file
-src/random.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o
-.PHONY : src/random.c.o
-
-src/random.i: src/random.c.i
-
-.PHONY : src/random.i
-
-# target to preprocess a source file
-src/random.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.i
-.PHONY : src/random.c.i
-
-src/random.s: src/random.c.s
-
-.PHONY : src/random.s
-
-# target to generate assembly for a file
-src/random.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.s
-.PHONY : src/random.c.s
 
 src/utils/array_utils.o: src/utils/array_utils.c.o
 
@@ -264,7 +237,7 @@ src/utils/array_utils.o: src/utils/array_utils.c.o
 
 # target to build an object file
 src/utils/array_utils.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/utils/array_utils.c.o
 .PHONY : src/utils/array_utils.c.o
 
 src/utils/array_utils.i: src/utils/array_utils.c.i
@@ -273,7 +246,7 @@ src/utils/array_utils.i: src/utils/array_utils.c.i
 
 # target to preprocess a source file
 src/utils/array_utils.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.i
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/utils/array_utils.c.i
 .PHONY : src/utils/array_utils.c.i
 
 src/utils/array_utils.s: src/utils/array_utils.c.s
@@ -282,35 +255,8 @@ src/utils/array_utils.s: src/utils/array_utils.c.s
 
 # target to generate assembly for a file
 src/utils/array_utils.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.s
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/utils/array_utils.c.s
 .PHONY : src/utils/array_utils.c.s
-
-src/utils/buffer_utils.o: src/utils/buffer_utils.c.o
-
-.PHONY : src/utils/buffer_utils.o
-
-# target to build an object file
-src/utils/buffer_utils.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o
-.PHONY : src/utils/buffer_utils.c.o
-
-src/utils/buffer_utils.i: src/utils/buffer_utils.c.i
-
-.PHONY : src/utils/buffer_utils.i
-
-# target to preprocess a source file
-src/utils/buffer_utils.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.i
-.PHONY : src/utils/buffer_utils.c.i
-
-src/utils/buffer_utils.s: src/utils/buffer_utils.c.s
-
-.PHONY : src/utils/buffer_utils.s
-
-# target to generate assembly for a file
-src/utils/buffer_utils.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.s
-.PHONY : src/utils/buffer_utils.c.s
 
 src/utils/save_to_file.o: src/utils/save_to_file.c.o
 
@@ -318,7 +264,7 @@ src/utils/save_to_file.o: src/utils/save_to_file.c.o
 
 # target to build an object file
 src/utils/save_to_file.c.o:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/utils/save_to_file.c.o
 .PHONY : src/utils/save_to_file.c.o
 
 src/utils/save_to_file.i: src/utils/save_to_file.c.i
@@ -327,7 +273,7 @@ src/utils/save_to_file.i: src/utils/save_to_file.c.i
 
 # target to preprocess a source file
 src/utils/save_to_file.c.i:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.i
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/utils/save_to_file.c.i
 .PHONY : src/utils/save_to_file.c.i
 
 src/utils/save_to_file.s: src/utils/save_to_file.c.s
@@ -336,7 +282,7 @@ src/utils/save_to_file.s: src/utils/save_to_file.c.s
 
 # target to generate assembly for a file
 src/utils/save_to_file.c.s:
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.s
+	$(MAKE) -f CMakeFiles/rand-seq-gen.dir/build.make CMakeFiles/rand-seq-gen.dir/src/utils/save_to_file.c.s
 .PHONY : src/utils/save_to_file.c.s
 
 # Help Target
@@ -345,9 +291,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... RandomSequenceGenerator"
+	@echo "... rebuild_cache"
+	@echo "... rand-seq-gen"
 	@echo "... src/data_sources/generator.o"
 	@echo "... src/data_sources/generator.i"
 	@echo "... src/data_sources/generator.s"
@@ -360,15 +306,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/random.o"
-	@echo "... src/random.i"
-	@echo "... src/random.s"
 	@echo "... src/utils/array_utils.o"
 	@echo "... src/utils/array_utils.i"
 	@echo "... src/utils/array_utils.s"
-	@echo "... src/utils/buffer_utils.o"
-	@echo "... src/utils/buffer_utils.i"
-	@echo "... src/utils/buffer_utils.s"
 	@echo "... src/utils/save_to_file.o"
 	@echo "... src/utils/save_to_file.i"
 	@echo "... src/utils/save_to_file.s"

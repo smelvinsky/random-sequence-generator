@@ -19,14 +19,8 @@ CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/utils/array_utils.h
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/utils/buffer_utils.h
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o: ../src/utils/save_to_file.h
 
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o: ../src/random.c
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o: ../src/random.h
-
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o: ../src/utils/array_utils.c
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o: ../src/utils/array_utils.h
-
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o: ../src/utils/buffer_utils.c
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o: ../src/utils/buffer_utils.h
 
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o: ../src/utils/save_to_file.c
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o: ../src/utils/save_to_file.h

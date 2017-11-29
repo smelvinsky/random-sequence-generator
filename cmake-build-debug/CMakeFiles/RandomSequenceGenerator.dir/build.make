@@ -81,33 +81,9 @@ CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o.provides: CMakeFiles/RandomS
 CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o.provides.build: CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o
 
 
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o: ../src/random.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/random.c
-
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RandomSequenceGenerator.dir/src/random.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/smelvinsky/Dev/RandomSequenceGenerator/src/random.c > CMakeFiles/RandomSequenceGenerator.dir/src/random.c.i
-
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RandomSequenceGenerator.dir/src/random.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/smelvinsky/Dev/RandomSequenceGenerator/src/random.c -o CMakeFiles/RandomSequenceGenerator.dir/src/random.c.s
-
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.requires:
-
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.requires
-
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.provides: CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.requires
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.provides.build
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.provides
-
-CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.provides.build: CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o
-
-
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o: ../src/utils/array_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/array_utils.c
 
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.i: cmake_force
@@ -131,7 +107,7 @@ CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o.provides.build:
 
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o: ../src/data_sources/soundcard/soundcard_noise.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/soundcard/soundcard_noise.c
 
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_nois
 
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o: ../src/data_sources/generator.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/generator.c
 
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.i: cmake_force
@@ -177,33 +153,9 @@ CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o.provides: 
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o.provides.build: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o
 
 
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o: ../src/utils/buffer_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.c
-
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.c > CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.i
-
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/buffer_utils.c -o CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.s
-
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.requires:
-
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.requires
-
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.provides: CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.requires
-	$(MAKE) -f CMakeFiles/RandomSequenceGenerator.dir/build.make CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.provides.build
-.PHONY : CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.provides
-
-CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.provides.build: CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o
-
-
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o: ../src/data_sources/white_noise_gen/uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/data_sources/white_noise_gen/uart.c
 
 CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.i: cmake_force
@@ -227,7 +179,7 @@ CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o
 
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o: CMakeFiles/RandomSequenceGenerator.dir/flags.make
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o: ../src/utils/save_to_file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o   -c /home/smelvinsky/Dev/RandomSequenceGenerator/src/utils/save_to_file.c
 
 CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.i: cmake_force
@@ -252,11 +204,9 @@ CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o.provides.build
 # Object files for target RandomSequenceGenerator
 RandomSequenceGenerator_OBJECTS = \
 "CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o" \
-"CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o" \
 "CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o" \
 "CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o" \
 "CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o" \
-"CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o" \
 "CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o" \
 "CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o"
 
@@ -264,16 +214,14 @@ RandomSequenceGenerator_OBJECTS = \
 RandomSequenceGenerator_EXTERNAL_OBJECTS =
 
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o
-RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o
-RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/build.make
 RandomSequenceGenerator: CMakeFiles/RandomSequenceGenerator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable RandomSequenceGenerator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smelvinsky/Dev/RandomSequenceGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable RandomSequenceGenerator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RandomSequenceGenerator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -282,11 +230,9 @@ CMakeFiles/RandomSequenceGenerator.dir/build: RandomSequenceGenerator
 .PHONY : CMakeFiles/RandomSequenceGenerator.dir/build
 
 CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/main.c.o.requires
-CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/random.c.o.requires
 CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/utils/array_utils.c.o.requires
 CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/soundcard/soundcard_noise.c.o.requires
 CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/generator.c.o.requires
-CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/utils/buffer_utils.c.o.requires
 CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/data_sources/white_noise_gen/uart.c.o.requires
 CMakeFiles/RandomSequenceGenerator.dir/requires: CMakeFiles/RandomSequenceGenerator.dir/src/utils/save_to_file.c.o.requires
 

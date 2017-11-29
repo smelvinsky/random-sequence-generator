@@ -27,14 +27,14 @@ void serial_dev_init(serial_dev *serial_dev, serial_dev_config *serial_dev_conf)
 
     if(!serial_dev)
     {
-        fprintf(stderr, "serial_dev pointer cannot be NULL\n");
+        fprintf(stderr, "serial_dev pointer cannot be NULL (in \"serial_dev_init\" function, uart.c)\n");
         fflush(stderr);
         exit(EXIT_FAILURE);
     }
 
     if(!serial_dev_conf)
     {
-        fprintf(stderr, "serial_dev_config pointer cannot be NULL\n");
+        fprintf(stderr, "serial_dev_config pointer cannot be NULL (in \"serial_dev_init\" function, uart.c)\n");
         fflush(stderr);
         exit(EXIT_FAILURE);
     }
@@ -42,7 +42,6 @@ void serial_dev_init(serial_dev *serial_dev, serial_dev_config *serial_dev_conf)
     serial_dev->serial_dev_conf = serial_dev_conf;
 
     #ifdef SERIAL_DEBUG
-    //TODO: add some parameters of initialized device
     printf("==> Serial device initialized:\n\tDevice name: %s\n", serial_dev->serial_dev_conf->serial_dev_name);
     fflush(stdout);
     #endif
@@ -57,7 +56,7 @@ void serial_dev_open(serial_dev *serial_dev)
 
     if(!serial_dev)
     {
-        fprintf(stderr, "serial_dev pointer cannot be NULL\n");
+        fprintf(stderr, "serial_dev pointer cannot be NULL (in \"serial_dev_open\" function, uart.c)\n");
         fflush(stderr);
         exit(EXIT_FAILURE);
     }
@@ -93,14 +92,14 @@ size_t serial_dev_set_parameters(serial_dev *serial_dev, void **dst_buff)
 
     if(!serial_dev)
     {
-        fprintf(stderr, "serial_dev pointer cannot be NULL\n");
+        fprintf(stderr, "serial_dev pointer cannot be NULL (in \"serial_dev_set_parameters\" function, uart.c)\n");
         fflush(stderr);
         exit(EXIT_FAILURE);
     }
 
     if(!(*dst_buff))
     {
-        fprintf(stderr, "(dst_buffer pointer) pointer cannot be NULL\n");
+        fprintf(stderr, "(dst_buffer pointer) pointer cannot be NULL (in \"serial_dev_set_parameters\" function, uart.c)\n");
         fflush(stderr);
         exit(EXIT_FAILURE);
     }
@@ -144,7 +143,6 @@ size_t serial_dev_set_parameters(serial_dev *serial_dev, void **dst_buff)
     /* disable terminal-generated signals       */
     t_options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
 
-    //TODO: do przemyślenia jak to rozegrać i w jakim formacie będą przesyłane dane
     /* wait for 12 characters to come in before read returns    */
     /* WARNING! THIS CAUSES THE read() TO BLOCK UNTIL ALL       */
     /* CHARACTERS HAVE COME IN!                                 */
@@ -155,14 +153,14 @@ size_t serial_dev_set_parameters(serial_dev *serial_dev, void **dst_buff)
     /* commit options */
     if (tcsetattr(serial_dev->serial_dev_fd, TCSANOW, &t_options) < 0)
     {
-        fprintf(stderr, "cannot set terminal options (%s)\n", strerror(errno));
+        fprintf(stderr, "cannot set terminal options (%s) (in \"serial_dev_set_parameters\" function, uart.c)\n", strerror(errno));
         exit(EXIT_FAILURE);
     }
 
     /* Flush anything already in the serial buffer */
     if (tcflush(serial_dev->serial_dev_fd, TCIFLUSH) != 0)
     {
-        fprintf(stderr, "cannot flush serial buffer (%s)\n", strerror(errno));
+        fprintf(stderr, "cannot flush serial buffer (%s) (in \"serial_dev_set_parameters\" function, uart.c)\n", strerror(errno));
         exit(EXIT_FAILURE);
     }
 
@@ -203,14 +201,14 @@ void serial_dev_close(serial_dev *serial_dev, void **buff)
 
     if(!serial_dev)
     {
-        fprintf(stderr, "serial_dev pointer cannot be NULL\n");
+        fprintf(stderr, "serial_dev pointer cannot be NULL (in \"serial_dev_close\" function, uart.c)\n");
         exit(EXIT_FAILURE);
     }
 
     /* Closes Serial device by given file descriptor */
     if (close(serial_dev->serial_dev_fd) == -1)
     {
-        fprintf(stderr, "cannot close %s device (%s)\n", serial_dev->serial_dev_conf->serial_dev_name, strerror(errno));
+        fprintf(stderr, "cannot close %s device (%s) (in \"serial_dev_close\" function, uart.c)\n", serial_dev->serial_dev_conf->serial_dev_name, strerror(errno));
         exit(EXIT_FAILURE);
     }
 
