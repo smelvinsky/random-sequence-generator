@@ -161,7 +161,10 @@ void print_help()
                    "\t\t  (any noise generator giving the 0-5V output can be used).\n"
                    "\tUsage:\n"
                    "\t\tTrue Random Number Generator program requires one parameter.\n"
-                   "\t\tRun the program with: \033[1;35m./rand-seq-gen -l <seq_len>\033[0m where the \033[1;35m<seq_len>\033[0m is the length of output sequence in bytes.\n\n");
+                   "\t\tRun the program with: \033[1;35m./rand-seq-gen -l <seq_len>\033[0m where the \033[1;35m<seq_len>\033[0m is the length of output sequence in bytes.\n\n"
+                   "By smelvinsky\n"
+                   "https://github.com/smelvinsky/\n"
+                   "2017\n\n");
 }
 
 int main(int argc, char **argv)
