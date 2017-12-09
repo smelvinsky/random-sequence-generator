@@ -43,7 +43,6 @@ Then, `` cd `` into main directory of the project ( this one including  `` CMake
 
 ```
 $ cmake CMakeLists.txt
-
 ```
 After that compile the program with:
 
