@@ -42,7 +42,8 @@ $ sudo apt-get install cmake
 Then, `` cd `` into main directory of the project ( this one including  `` CMakeLists.txt `` file,  ``/random-sequence-generator-master`` directory probably) and run `cmake` to generate ` Makefile ` by typing
 
 ```
-$ cmake
+$ cmake CMakeLists.txt
+
 ```
 After that compile the program with:
 
